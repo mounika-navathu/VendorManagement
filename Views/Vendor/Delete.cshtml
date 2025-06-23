@@ -1,0 +1,16 @@
+@model VendorManagement.Models.Vendor
+
+<h2>Delete Vendor</h2>
+
+<h4>Are you sure you want to delete this?</h4>
+<div>
+    <h5>@Model.Name</h5>
+    <p>Email: @Model.Email</p>
+    <p>Role: @Model.Role</p>
+</div>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Yes, Delete</button>
+    <a asp-action="Index">Cancel</a>
+</form>

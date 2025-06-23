@@ -1,0 +1,19 @@
+@model IEnumerable<VendorManagement.Models.Vendor>
+
+<h2>Vendors</h2>
+<a asp-action="Create">Create New Vendor</a>
+<table>
+    <tr><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr>
+    @foreach (var vendor in Model)
+    {
+        <tr>
+            <td>@vendor.Name</td>
+            <td>@vendor.Email</td>
+            <td>@vendor.Role</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@vendor.Id">Edit</a>
+                <a asp-action="Delete" asp-route-id="@vendor.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
